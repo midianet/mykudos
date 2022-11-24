@@ -2,28 +2,23 @@ package midianet.mykudos.core.usecase;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import midianet.mykudos.core.entity.Sprint;
-import midianet.mykudos.infra.database.SprintRepository;
+import midianet.mykudos.core.entity.Event;
+import midianet.mykudos.infra.database.EventRepository;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
 import javax.transaction.Transactional;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
-import java.util.UUID;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class NewKudo {
-    private final SprintRepository repository;
+    private final EventRepository repository;
 
     @Transactional
-    public Sprint.Kudo execute(@NonNull final In kudo){
+    public Event.Kudo execute(@NonNull final In kudo){
 //        final var persistent = repository.save(Sprint.Kudo.builder()
 //                .id(String.valueOf(Math.abs(UUID.randomUUID().getMostSignificantBits())))
 //                .user(kudo.user)

@@ -16,7 +16,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Sprint {
+public class Event {
     @Id
     @Column(length = 20)
     private String id;

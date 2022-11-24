@@ -1,7 +1,7 @@
 package midianet.mykudos.infra.rest;
 
 import lombok.RequiredArgsConstructor;
-import midianet.mykudos.core.entity.Sprint;
+import midianet.mykudos.core.entity.Event;
 import midianet.mykudos.core.usecase.NewSprint;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -34,7 +34,7 @@ public class SprintResource {
 
 
     @GetMapping("/{id}")
-    public Sprint get(@PathVariable final String id){
+    public Event get(@PathVariable final String id){
         return listarPedidos.execute();
     }
 //

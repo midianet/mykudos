@@ -2,8 +2,8 @@ package midianet.mykudos.core.usecase;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import midianet.mykudos.core.entity.Sprint;
-import midianet.mykudos.infra.database.SprintRepository;
+import midianet.mykudos.core.entity.Event;
+import midianet.mykudos.infra.database.EventRepository;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -12,9 +12,9 @@ import javax.persistence.EntityNotFoundException;
 @RequiredArgsConstructor
 public class GetSprint {
 
-    private final SprintRepository repository;
+    private final EventRepository repository;
 
-    public Sprint execute(@NonNull final String id, @NonNull final String user) {
+    public Event execute(@NonNull final String id, @NonNull final String user) {
         return repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Sprint não econtrada"));
     }
